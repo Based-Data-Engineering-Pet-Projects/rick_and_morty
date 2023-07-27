@@ -22,9 +22,9 @@ while response["info"]["next"]:
     response = requests.get(response["info"]["next"]).json()
     other_pages_data.extend(response["results"])
 
-all_other_date = create_df(other_pages_data)
+all_other_data = create_df(other_pages_data)
 
-frames = [first_page_data, all_other_date]
+frames = [first_page_data, all_other_data]
 
 character_df = pd.concat(frames)
 
